@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let hud = YCProgressHUD(style: YCProgressHUDStyle.PlaceholderImageWithProgress)
+    let hud = YCProgressHUD(style: YCProgressHUDStyle.Default)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "苹果精选"
-        hud.inView(self.view).tintColor(UIColor.orangeColor()).backGroundColor(.redColor()).image(UIImage(named: "placeHoder")).show()
+        title = "神马新闻"
+        hud.inView(self.view).tintColor(UIColor.orangeColor()).image(UIImage(named: "placeHoder")).show()
     }
     
     

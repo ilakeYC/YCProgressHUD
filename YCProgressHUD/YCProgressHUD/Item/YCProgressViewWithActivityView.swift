@@ -9,8 +9,8 @@
 import UIKit
 
 class YCProgressViewWithActivityView: UIView {
-    var activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-    var activityContentView = UIView()
+    let activityView        = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+    let activityContentView = UIView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,14 +21,14 @@ class YCProgressViewWithActivityView: UIView {
     }
     func setupAllViews() {
         addSubview(activityContentView)
-        activityView.startAnimating()
+        activityContentView.addSubview(activityView)
+        
         activityContentView.layer.cornerRadius = 6
-//        activityContentView.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
-//        activityContentView.layer.borderWidth = 1
         activityContentView.layer.shadowColor = UIColor.grayColor().CGColor
         activityContentView.layer.shadowOffset = CGSizeMake(0, 3)
         activityContentView.layer.shadowOpacity = 1
-        activityContentView.addSubview(activityView)
+        
+        activityView.startAnimating()
     }
     
     override func layoutSubviews() {

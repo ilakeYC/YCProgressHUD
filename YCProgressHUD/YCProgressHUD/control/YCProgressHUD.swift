@@ -15,6 +15,8 @@ public enum YCProgressHUDStyle {
 
 public class YCProgressHUD: NSObject {
     
+    
+    
     static let tipsView = YCPopTipsView()
     
     private weak var __superView: UIView?
@@ -26,7 +28,7 @@ public class YCProgressHUD: NSObject {
     
     public var style: YCProgressHUDStyle = .Default
     public var isShowing = false
-    public var tintColor = UIColor.orangeColor()
+    public var tintColor       = UIColor.orangeColor()
     public var backgroundColor = UIColor.whiteColor()
     
     var animatedComplete: (() -> ())?
@@ -166,6 +168,7 @@ private extension YCProgressHUD {
         __imageWithProgress.progressTintColor = tintColor
         self.__superView?.addSubview(__imageWithProgress)
         self.isShowing = true
+        
     }
     
     func finishImageWithProgress() {
